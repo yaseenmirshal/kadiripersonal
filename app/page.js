@@ -35,7 +35,7 @@ export default function Home() {
 
       {/* Company Name */}
       <div className="text-center mt-10">
-        <h1 className="text-4xl font-bold">KADIRI GOLD</h1>
+        <h1 className="text-3xl font-bold">KADIRI GOLD</h1>
         <p className="text-gray-300 text-lg">Bullion Jewellery L.L.C</p>
       </div>
 
@@ -47,19 +47,27 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Boxes Section */}
-      <div className="w-full max-w-md grid grid-cols-2 gap-4 mt-6">
-        {[{ heading: 'Gold Bullion', image: '/bullion.jpg' },
-          { heading: 'Exquisite Jewellery', image: '/jewellery.jpg' },
-          { heading: 'Gold Coins', image: '/coins.jpg' },
-          { heading: 'Investment Plans', image: '/investment.jpg' }
-        ].map((item, index) => (
-          <div key={index} className="bg-[#3B0A0A] rounded-lg p-4 shadow-md text-center">
-            <img src={item.image} alt={item.heading} className="w-full h-24 object-cover rounded-lg mb-2" />
-            <h3 className="text-lg font-bold">{item.heading}</h3>
-          </div>
-        ))}
-      </div>
+    {/* Boxes Section */}
+<div className="w-full max-w-md grid grid-cols-2 gap-4 mt-6">
+  {[
+    { heading: '995 BARS', image: 'https://kadirigold.com/images/product-img1.png' },
+    { heading: '995 BARS', image: 'https://kadirigold.com/images/product-img2.png' },
+    { heading: '9999 BARS', image: 'https://kadirigold.com/images/product-img3.png' },
+    { heading: 'Gold Ornaments', image: 'https://kadirigold.com/images/product-img4.png' },
+    { heading: 'GOLD COINS', image: 'https://kadirigold.com/images/product-img5.png' }
+  ].map((item, index, array) => (
+    <div
+      key={index}
+      className={`bg-[#3B0A0A] rounded-lg p-4 shadow-md text-center ${
+        index === array.length - 1 ? 'col-span-2 mx-auto w-full' : ''
+      }`}
+    >
+      <img src={item.image} alt={item.heading} className="w-full h-28 object-cover rounded-lg mb-2" />
+      <h3 className="text-lg font-bold text-yellow-400">{item.heading}</h3>
+    </div>
+  ))}
+</div>
+
 
       {/* Contact Details */}
       <div className="w-full max-w-md space-y-4 mt-6">
@@ -77,6 +85,17 @@ export default function Home() {
           </a>
         ))}
       </div>
+
+       {/* App Store and Play Store Icons */}
+       <div className="w-full max-w-md flex justify-center space-x-4 mt-6">
+      <a href="https://apps.apple.com/in/app/kadiri-gold-jewellery/id6741804948" target="_blank" rel="noopener noreferrer">
+          <img src="./apple.png" alt="App Store" className="w-32 h-10 mt-2 hover:opacity-80 transition-all" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.artifitia.kadirigoldbullion&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+          <img src="./playyy.png" alt="Play Store" className="w-32 h-14 hover:opacity-80 transition-all" />
+        </a>
+      </div>
+
 
       {/* Powered By Section */}
       <div className="mt-8 text-center text-gray-300">
